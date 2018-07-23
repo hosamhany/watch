@@ -5,3 +5,7 @@ Inorder to use it:
 - git clone the repository.
 - Give the shell file read permissions.
 - Run ./watch.sh *<Command to be watched>*
+
+## TODO:
+
+- Add time flag
