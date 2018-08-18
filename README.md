@@ -4,8 +4,13 @@ This is a bash implementation for linux's watch command, for mac users. It watch
 Inorder to use it:
 - git clone the repository.
 - Give the shell file read permissions.
-- Run ./watch.sh *<Command to be watched>*
+- Run the following command
+```
+./watch.sh <command to be watched>
+```
 
-## TODO:
-
-- Add time flag
+## Run with time interval
+- Inorder to run watch within a certain time interval, run
+```
+./watch.sh -n <time-interval> <command to be watched>
+```
