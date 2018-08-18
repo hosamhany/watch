@@ -1,20 +1,23 @@
 #!/bin/bash
-infinite_watch (){
-	while :; do
-		clear;
-		$@;
-		sleep 2;
-	done
-}
-
-watch_with_interval(){
-	interval=$1
+. implementations.sh
+while [ ! $# -eq 0 ]
+do
+	case "$1" in
+		--help | -h)
+			helpmenu
+			exit
+			;;
+		--interval | -n)
+			flag=$2
+			shift 2
+			rest=$@
+			watch_with_interval $flag $rest
+			exit
+			;;
+		*)
+			echo $@
+			infinite_watch $@
+			exit
+	esac
 	shift
-	rest=$@
-	while [ $SECONDS -lt $interval ]; do
-		clear;
-		 $rest
-		sleep 2;
-	done
-
-}
+done
